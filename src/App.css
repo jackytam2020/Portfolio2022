@@ -1,38 +1,198 @@
-.App {
-  text-align: center;
+/* fonts */
+@font-face {
+  font-family: Neue Haas Grotesk Display Pro Light;
+  src: url(./assets/fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayLight.ttf);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: Neue Haas Grotesk Display Pro Thin;
+  src: url(./assets/fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayThin.ttf);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes sectionSlideUp {
+  0% {
+    transform: translateY(10%);
+    
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
+* {
+  font-family: Neue Haas Grotesk Display Pro Thin;
+}
+
+.App {
   min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  transition: 1s;
+  background-color: #EEE7E7;
+  color: black;
+  /* background: linear-gradient(to right bottom,
+   rgba(255,255,255,.7),
+   rgba(255,255,255,.3)); */
+}
+
+.App-dark-mode {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 1s;
   color: white;
+  background-color: #111818;
+  /* background: linear-gradient(to right bottom,
+   rgba(255,255,255,.7),
+   rgba(255,255,255,.3)); */
 }
 
-.App-link {
-  color: #61dafb;
+.portfolio-container {
+  width: 55%;
+  max-width: 1050px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav{
+  width: 55%;
+  max-width: 1050px;
+  position: fixed;
+  margin-top: 50px;
+  z-index: 2;
+}
+
+.hero-header {
+  margin-top: 10vh;
+}
+
+.line{
+  border: 0.5px solid #B8B8B8;
+  width: 10%;
+  margin-top: 10vh;
+  margin-bottom: 10px;
+}
+
+.line-in-view{
+  border: 0.5px solid #B8B8B8;
+  width: 100%;
+  transition: 0.5s ease-in;
+  margin-top: 10vh;
+  margin-bottom: 10px;
+}
+
+.projects-section{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tech-used-section {
+  margin-top: 50px;
+}
+
+.tech-used-section-in-view {
+  margin-top: 50px;
+  animation-duration: 1s;
+  animation-name: sectionSlideUp;
+}
+
+.about-me-section {
+  margin-top: 100px;
+}
+
+.about-me-section-in-view {
+  margin-top: 100px;
+  animation-duration: 1s;
+  animation-name: sectionSlideUp;
+}
+
+.contact-section {
+  margin-top: 100px;
+}
+
+.contact-section-in-view {
+  margin-top: 100px;
+  animation-duration: 1s;
+  animation-name: sectionSlideUp;
+}
+
+.footer-section {
+  width: 100%;
+  height: 263px;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.footer-wrapper{
+  width: 55%;
+  max-width: 1050px;
+
+}
+
+@media screen and (max-width: 480px) { 
+
+  .portfolio-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav{
+    width: 80%;
+    position: fixed;
+    margin-top: 50px;
+    z-index: 2;
+  }
+
+  .hero-header {
+    margin-top: 150px;
+  }
+
+  .footer-section {
+    height: 368px;
+    margin-top: 100px;
+  }
+  
+  .footer-wrapper{
+    width: 80%;
+    padding-top: 20px;
+  }
+  
+}
+
+@media (min-width: 481px) and (max-width: 1200px) {
+  .portfolio-container {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .nav{
+    width: 65%;
+    position: fixed;
+    margin-top: 50px;
+    z-index: 2;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 750px) {
+  .footer-section {
+    height: 368px;
+    margin-top: 100px;
+  }
+  
+  .footer-wrapper{
+    padding-top: 20px;
   }
 }

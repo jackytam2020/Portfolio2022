@@ -1,0 +1,132 @@
+@import '../../App.css';
+
+
+.hero-header-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-top {
+    padding-top: 10%;
+    padding-bottom: 5%;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+      
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slowlyAppear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+  }
+  
+
+.hero-top > p {
+    overflow: hidden !important;
+    font-size: 6vw;
+    margin: 0;
+    animation: slideInFromBottom 0.5s ease-in;
+}
+
+.hero-bottom-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.hero-bottom-items > div {
+    width: 13%;
+}
+
+.hero-bottom-items > div > p {
+    font-size: 24px;
+    margin: 0;
+    animation: slowlyAppear 2s ease-in;
+}
+
+.hero-bottom-items > :last-child {
+    font-size: 6vw;
+    margin: 0;
+    animation: slideInFromBottom 0.5s ease-in;
+}
+
+@media screen and (max-width: 480px) {
+    .hero-header-container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .hero-top {
+        padding-bottom: 5%;
+    }
+    .hero-top > p {
+        overflow: hidden !important;
+        font-size: 35px;
+        animation: slideInFromBottom 0.5s ease-in;
+    }
+
+    .hero-bottom-items {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    .hero-bottom-items > div {
+        width: 20%;
+    }
+    
+    .hero-bottom-items > div > p {
+        font-size: 14px;
+        animation: slowlyAppear 2s ease-in;
+    }
+    
+    .hero-bottom-items > :last-child {
+        font-size: 35px;
+        animation: slideInFromBottom 0.5s ease-in;
+    }
+}
+
+@media (min-width:1250px) and (max-width:1550px) {
+    .hero-bottom-items > div {
+        width: 15%;
+    }
+    
+    .hero-bottom-items > div > p {
+        font-size: 18px;
+        animation: slowlyAppear 2s ease-in;
+    }
+
+}
+
+@media (min-width:489px) and (max-width:1249px) {
+    .hero-bottom-items > div {
+        width: 20%;
+    }
+    
+    .hero-bottom-items > div > p {
+        font-size: 14px;
+        animation: slowlyAppear 2s ease-in;
+      
+    }
+
+}
+
+@media screen and (min-width: 1800px) {
+    .hero-top > p, .hero-bottom-items > :last-child   {
+       font-size: 140px;
+    }
+  }

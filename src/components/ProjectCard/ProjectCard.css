@@ -1,0 +1,119 @@
+@import '../../App.css';
+
+
+@keyframes projectSlideUp {
+    0% {
+      transform: translateY(10%);
+      
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+.project-card-container{
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.project-card-container-in-view{
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+    margin-top: 30px;
+    animation-duration: 1s;
+    animation-name: projectSlideUp;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-div-holder{
+    width: 100%;
+    transition: 00.5s;
+}
+
+.card-div-holder:hover{
+    height: auto;
+    width: 90%;
+}
+
+
+.card-description{
+    width: 65%;
+    height: 40px;
+    margin-bottom: 50px;
+    font-size: 24px;
+    color: #7A7A7A;
+}
+
+
+.project-thumbnail{
+    height: auto;
+    width: 100%;
+    transition: 0.5s;
+}
+
+
+.card-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-title {
+    margin-bottom: 20px;
+}
+
+.card-title > p {
+    margin: 0;
+    margin-top: 10px;
+}
+.card-title > :first-child {
+    font-size: 36px;
+}
+
+.card-title > :last-child {
+    font-size: 20px;
+}
+
+.right-arrow{
+    height: 25px;
+    padding-right: 15px;
+    transition: 1s;
+}
+
+@media screen and (max-width: 800px) {
+    .project-card-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .project-card-container-in-view{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 30px;
+        animation-duration: 1s;
+        animation-name: projectSlideUp;
+    }
+
+    .card-description{
+        width: 70%;
+        height: 40px;
+        margin-bottom: 30px;
+        font-size: 18px;
+        color: #7A7A7A;
+    }
+    
+    .project-thumbnail{
+        height: auto;
+        width: 100%;
+    }
+}
