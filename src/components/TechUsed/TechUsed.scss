@@ -1,0 +1,32 @@
+.tech-used-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-top > p {
+  font-size: 24px;
+  color: #7a7a7a;
+}
+
+.tech-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.tech-bottom > img {
+  height: 15%;
+  width: 15%;
+}
+
+@media screen and (max-width: 480px) {
+  .tech-top > p {
+    font-size: 18px;
+    color: #7a7a7a;
+  }
+
+  .tech-bottom > img {
+    height: 48px;
+    width: 48px;
+  }
+}

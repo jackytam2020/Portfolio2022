@@ -1,0 +1,128 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/fonts' as *;
+
+.nav {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+
+  &__home-btn {
+    font-family: Plus Jakarta Medium;
+    font-weight: 500;
+    letter-spacing: -0.54px;
+  }
+
+  &__menu-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    column-gap: 2rem;
+
+    p {
+      font-family: Plus Jakarta Medium;
+      font-weight: 500;
+      letter-spacing: -0.54px;
+      cursor: pointer;
+    }
+  }
+
+  &__hamburger-container {
+    width: 75px;
+    height: 75px;
+    border: 1px solid rgb(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__hamburger-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+.nav--dark {
+  height: 55px;
+  border-radius: 25px;
+  border: 1px solid #111818;
+  background-color: hsla(0, 0%, 82.7%, 0.34);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+}
+
+// .nav-inner-content {
+//   display: flex;
+//   padding: 30px;
+//   justify-content: space-between;
+//   align-items: center;
+//   width: 100%;
+// }
+
+.nav-buttons * {
+  margin: 0;
+}
+
+@include small() {
+  .nav {
+    padding: 2rem 1rem 0rem 1rem;
+
+    &__menu-items {
+      display: none;
+    }
+  }
+}
+
+@include medium() {
+  .nav {
+    padding: 2rem 2rem 0rem 2rem;
+
+    &__hamburger-container {
+      display: none;
+    }
+  }
+}
+
+@include large() {
+  .nav {
+    padding: 2rem 0rem 0rem 0rem;
+
+    &__hamburger-container {
+      display: none;
+    }
+  }
+}
+// @media screen and (max-width: 480px) {
+//   .nav-container {
+//     height: 55px;
+//     border-radius: 25px;
+//     border: 1px solid #ccc5c5;
+//     background-color: hsla(0, 0%, 82.7%, 0.34);
+//     backdrop-filter: blur(10px);
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }
+
+//   .nav-inner-content {
+//     display: flex;
+//     padding: 20px;
+//     justify-content: space-between;
+//     align-items: center;
+//     width: 100%;
+//   }
+
+//   .home-icon {
+//     height: 36px;
+//     width: 36px;
+//   }
+
+//   .nav-buttons {
+//     display: flex;
+//     width: 184px;
+//     justify-content: space-between;
+//   }
+// }
