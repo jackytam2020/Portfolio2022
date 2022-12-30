@@ -1,11 +1,39 @@
-import React from "react";
-import { useEffect } from "react";
-import "./AboutMe.scss";
-import Portrait from "../../assets/images/portrait-photo.JPG";
+import React from 'react';
+import { useEffect } from 'react';
+import './AboutMe.scss';
+import Portrait from '../../assets/images/portrait-photo.JPG';
 
-const AboutMe = ({ scrollDirection, className, scrollValue }) => {
+import { motion } from 'framer-motion';
+
+const AboutMe = ({
+  scrollDirection,
+  className,
+  scrollValue,
+  isVisible,
+  reference,
+}) => {
+  const variants = {
+    inView: { opacity: 1, transform: 'translateY(-40px)' },
+    outOfView: { opacity: 0, transform: 'translateY(0px)' },
+  };
+
   return (
-    <section className="about" id="about">
+    <motion.section
+      ref={reference}
+      className="about"
+      id="about"
+      animate={isVisible ? 'inView' : 'outOfView'}
+      variants={{
+        inView: {
+          ...variants.inView,
+          transition: { duration: 0.5 },
+        },
+        outOfView: {
+          ...variants.outOfView,
+          transition: { duration: 0.5 },
+        },
+      }}
+    >
       <div className="about__div-stagger">
         <img src={Portrait} alt="portrait photo" className="about__portrait" />
         <div className="about__stagger1"></div>
@@ -30,7 +58,7 @@ const AboutMe = ({ scrollDirection, className, scrollValue }) => {
           applications that truly bring utility and value to the end user.
         </p>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

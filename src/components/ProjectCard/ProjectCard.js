@@ -1,10 +1,10 @@
-import { useRef, useEffect, useState, useContext } from "react";
-import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
-import { AiOutlineLink, AiOutlineGithub } from "react-icons/ai";
-import { ThemeContext } from "../../context";
+import { useRef, useEffect, useState, useContext } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
+import { AiOutlineLink, AiOutlineGithub } from 'react-icons/ai';
+import { ThemeContext } from '../../context';
 
-import "./ProjectCard.scss";
+import './ProjectCard.scss';
 
 const ProjectCard = ({
   scrollDirection,
@@ -20,16 +20,16 @@ const ProjectCard = ({
   const [projectHover, setProjectHover] = useState(false);
 
   const variants = {
-    enter: { transform: "translateX(-20px)" },
-    leave: { transform: "translateX(0px)" },
+    enter: { transform: 'translateX(-20px)' },
+    leave: { transform: 'translateX(0px)' },
     show: { opacity: 1 },
     hide: { opacity: 0 },
-    inView: { opacity: 1, transform: "translateY(-40px)" },
-    outOfView: { opacity: 0, transform: "translateY(0px)" },
+    inView: { opacity: 1, transform: 'translateY(-40px)' },
+    outOfView: { opacity: 0, transform: 'translateY(0px)' },
   };
 
   const theme = useContext(ThemeContext);
-  let darkMode = theme.state.darkMode;
+  const darkMode = theme.state.darkMode;
 
   return (
     <motion.div
@@ -38,10 +38,7 @@ const ProjectCard = ({
       onMouseLeave={() => {
         setProjectHover(false);
       }}
-      onClick={() => {
-        console.log(darkMode);
-      }}
-      animate={isVisible ? "inView" : "outOfView"}
+      animate={isVisible ? 'inView' : 'outOfView'}
       variants={{
         inView: {
           ...variants.inView,
@@ -54,7 +51,7 @@ const ProjectCard = ({
       }}
     >
       <motion.img
-        animate={projectHover && window.innerWidth > 767 ? "enter" : "leave"}
+        animate={projectHover && window.innerWidth > 767 ? 'enter' : 'leave'}
         src={src}
         className="card__thumbnail"
         alt={alt}
@@ -75,7 +72,7 @@ const ProjectCard = ({
       <motion.div
         className="card__details"
         animate={
-          window.innerWidth < 768 ? "show" : projectHover ? "show" : "hide"
+          window.innerWidth < 768 ? 'show' : projectHover ? 'show' : 'hide'
         }
         variants={{
           show: {
@@ -91,16 +88,16 @@ const ProjectCard = ({
         <p className="card__title">{title}</p>
         <p className="card__description">{desc}</p>
         <div className="card__links">
-          <a href={HostLink}>
+          <a href={HostLink} target="_blank">
             <AiOutlineLink
               className="card__link-logo"
-              color={darkMode ? "white" : "black"}
+              color={darkMode ? 'white' : 'black'}
             />
           </a>
-          <a href={GitHubLink}>
+          <a href={GitHubLink} target="_blank">
             <AiOutlineGithub
               className="card__link-logo"
-              color={darkMode ? "white" : "black"}
+              color={darkMode ? 'white' : 'black'}
             />
           </a>
         </div>

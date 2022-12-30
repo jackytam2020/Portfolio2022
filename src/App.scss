@@ -1,6 +1,6 @@
 @use './styles/partials/resets' as *;
 
-.App {
+.app {
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -12,7 +12,7 @@
   overflow-x: hidden;
 }
 
-.App-dark-mode {
+.app--dark {
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -24,24 +24,22 @@
   overflow-x: hidden;
 }
 
-.portfolio-container {
+.app__container {
   max-width: 1280px;
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
-.footer-section {
-  width: 100%;
-  height: 263px;
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
+html::-webkit-scrollbar {
+  width: 8px;
 }
 
-.footer-wrapper {
-  width: 55%;
-  max-width: 1050px;
+html::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 5px;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: white;
 }
