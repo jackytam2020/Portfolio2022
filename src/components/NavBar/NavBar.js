@@ -17,7 +17,7 @@ const NavBar = ({ darkMode, setMenuIsOpen }) => {
       </h3>
 
       <div className="nav__menu-items">
-        <ModeToggle />
+        <ModeToggle setMenuIsOpen={setMenuIsOpen} />
         <Link to="projects" smooth={true} offset={-150} duration={1000}>
           <p className={` ${darkMode ? "nav__link--light" : "nav__link"}`}>
             Projects

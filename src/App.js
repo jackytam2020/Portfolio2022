@@ -5,7 +5,7 @@ import "./App.scss";
 import NavBar from "./components/NavBar/NavBar";
 import HeroHeader from "./components/HeroHeader/HeroHeader";
 import ProjectCard from "./components/ProjectCard/ProjectCard";
-import TechUsed from "./components/TechUsed/TechUsed";
+import MySkills from "./components/MySkills/MySkills";
 import AboutMe from "./components/AboutMe/AboutMe";
 // import Contact from './components/Contact/Contact';
 import ProjectSection from "./components/ProjectsSection/ProjectSection";
@@ -146,16 +146,7 @@ function App() {
         />
         <HeroHeader darkMode={darkMode} />
         <ProjectSection />
-        <div
-          ref={techRef}
-          className={`${
-            techRefIsVisible && scrollDirection === "down"
-              ? "tech-used-section-in-view"
-              : "tech-used-section"
-          }`}
-        >
-          <TechUsed />
-        </div>
+        <MySkills />
         <AboutMe scrollDirection={scrollDirection} scrollValue={y} />
       </div>
 
@@ -167,36 +158,5 @@ function App() {
     </div>
   );
 }
-
-const projects = [
-  {
-    cardDescription: "Elevating collaboration with teachers & students.",
-    imgUrl: "project-thumbnail-1.png",
-    projectName: "Project 1",
-    date: "Fall 2022",
-  },
-
-  {
-    cardDescription:
-      "Driving blockchain and robotics together with gamification.",
-    imgUrl: "project-thumbnail-2.png",
-    projectName: "Project 2",
-    date: "Fall 2022",
-  },
-
-  {
-    cardDescription: "A doll & app for children with Autism Spectrum Disorder.",
-    imgUrl: "project-thumbnail-3.png",
-    projectName: "Project 3",
-    date: "Fall 2022",
-  },
-
-  {
-    cardDescription: "A toy range for growing good habits in young children.",
-    imgUrl: "project-thumbnail-4.png",
-    projectName: "Project 4",
-    date: "Fall 2022",
-  },
-];
 
 export default App;

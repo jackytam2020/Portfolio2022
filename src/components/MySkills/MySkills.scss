@@ -1,0 +1,39 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/fonts' as *;
+
+.skills {
+  display: flex;
+  flex-direction: column;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+    column-gap: 3rem;
+    row-gap: 3rem;
+  }
+
+  &__skill-icon {
+    width: 6.5%;
+    height: auto;
+  }
+}
+
+@include small() {
+  .skills {
+    padding: 0rem 1rem;
+    margin-top: 2rem;
+  }
+}
+@include medium() {
+  .skills {
+    padding: 0rem 2rem;
+    margin-top: 3rem;
+  }
+}
+@include large() {
+  .skills {
+    padding: 0rem 0rem;
+    margin-top: 7rem;
+  }
+}

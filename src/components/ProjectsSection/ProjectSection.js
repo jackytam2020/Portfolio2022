@@ -5,10 +5,10 @@ import ProjectCard from "../ProjectCard/ProjectCard";
 import { useInView } from "react-intersection-observer";
 import BeautyEtAl from "../../assets/images/beauty-et-al-project.png";
 
-function ProjectSection(props) {
+function ProjectSection({ darkMode }) {
   const projectCardOption1 = {
     threshold: 0,
-    rootMargin: "0px 0px -200px 0px",
+    rootMargin: "0px 0px -275px 0px",
     trackVisibility: true,
     delay: 500,
   };

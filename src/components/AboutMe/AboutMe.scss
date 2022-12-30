@@ -3,7 +3,6 @@
 
 .about {
   display: grid;
-  margin-top: 5rem;
 
   &__div-stagger {
     width: 100%;
@@ -61,6 +60,7 @@
   .about {
     grid-template-columns: 1fr;
     padding: 0rem 1rem;
+    margin-top: 5rem;
 
     &__stagger1,
     &__stagger2 {
@@ -81,6 +81,8 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 0rem 8rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
 
     &__header {
       font-size: 1.5rem;
@@ -94,6 +96,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 0rem;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
 
     &__header {
       font-size: 1.5rem;

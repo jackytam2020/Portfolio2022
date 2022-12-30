@@ -11,7 +11,7 @@ const HeroHeader = ({ darkMode }) => {
         <h1 className="hero__copy">
           <span className="hero__emoji">👋</span>
           <span className="hero__span">Hi I'm Jacky.</span> A Web Developer
-          based in <span className="hero__span">Vancouver</span>
+          based in <span className="hero__span-block">Vancouver</span>
         </h1>
       </div>
       <div className="hero__bottom">

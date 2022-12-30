@@ -1,21 +1,19 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useContext } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { AiOutlineLink, AiOutlineGithub } from "react-icons/ai";
+import { ThemeContext } from "../../context";
 
 import "./ProjectCard.scss";
-// import PropTypes from "prop-types";
-// import RightArrow from "../../assets/images/right-arrow.svg";
-// import WhiteRightArrow from "../../assets/images/white-right-arrow.svg";
 
 const ProjectCard = ({
   scrollDirection,
-  darkMode,
   src,
   alt,
   title,
   desc,
   HostLink,
+  GitHubLink,
   reference,
   isVisible,
 }) => {
@@ -30,6 +28,9 @@ const ProjectCard = ({
     outOfView: { opacity: 0, transform: "translateY(0px)" },
   };
 
+  const theme = useContext(ThemeContext);
+  let darkMode = theme.state.darkMode;
+
   return (
     <motion.div
       ref={reference}
@@ -38,7 +39,7 @@ const ProjectCard = ({
         setProjectHover(false);
       }}
       onClick={() => {
-        console.log(isVisible);
+        console.log(darkMode);
       }}
       animate={isVisible ? "inView" : "outOfView"}
       variants={{
@@ -91,8 +92,16 @@ const ProjectCard = ({
         <p className="card__description">{desc}</p>
         <div className="card__links">
           <a href={HostLink}>
-            <AiOutlineLink className="card__link-logo" />
-            <AiOutlineGithub className="card__link-logo" />
+            <AiOutlineLink
+              className="card__link-logo"
+              color={darkMode ? "white" : "black"}
+            />
+          </a>
+          <a href={GitHubLink}>
+            <AiOutlineGithub
+              className="card__link-logo"
+              color={darkMode ? "white" : "black"}
+            />
           </a>
         </div>
       </motion.div>
