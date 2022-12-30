@@ -5,24 +5,35 @@
     margin-top: 5rem;
     display: flex;
     flex-direction: column;
-    row-gap: 5rem;
   }
 }
 
 @include small() {
   .project-section {
     padding: 0rem 1rem;
+
+    &__project-list {
+      row-gap: 2rem;
+    }
   }
 }
 
 @include medium() {
   .project-section {
     padding: 0rem 2rem;
+
+    &__project-list {
+      row-gap: 5rem;
+    }
   }
 }
 
 @include large() {
   .project-section {
     padding: 0rem;
+
+    &__project-list {
+      row-gap: 5rem;
+    }
   }
 }
