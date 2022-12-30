@@ -1,25 +1,25 @@
-import { useEffect, useState, useCallback, useContext, useRef } from 'react';
-import { useInView } from 'react-intersection-observer';
+import { useEffect, useState, useCallback, useContext, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 
-import './App.scss';
-import NavBar from './components/NavBar/NavBar';
-import HeroHeader from './components/HeroHeader/HeroHeader';
-import ProjectCard from './components/ProjectCard/ProjectCard';
-import TechUsed from './components/TechUsed/TechUsed';
-import AboutMe from './components/AboutMe/AboutMe';
+import "./App.scss";
+import NavBar from "./components/NavBar/NavBar";
+import HeroHeader from "./components/HeroHeader/HeroHeader";
+import ProjectCard from "./components/ProjectCard/ProjectCard";
+import TechUsed from "./components/TechUsed/TechUsed";
+import AboutMe from "./components/AboutMe/AboutMe";
 // import Contact from './components/Contact/Contact';
-import ProjectSection from './components/ProjectsSection/ProjectSection';
-import MenuSlideOut from './components/MenuSlideOut/MenuSlideOut';
-import Footer from './components/Footer/Footer';
-import { ThemeContext } from './context';
+import ProjectSection from "./components/ProjectsSection/ProjectSection";
+import MenuSlideOut from "./components/MenuSlideOut/MenuSlideOut";
+import Footer from "./components/Footer/Footer";
+import { ThemeContext } from "./context";
 
-import { getSunriseSunsetInfo } from 'sunrise-sunset-api';
+import { getSunriseSunsetInfo } from "sunrise-sunset-api";
 
 function App() {
   // const { ref: lineRef, inView: lineIsVisible } = useInView();
   const { ref: techRef, inView: techRefIsVisible } = useInView();
   const { ref: aboutRef, inView: aboutRefIsVisible } = useInView({
-    rootMargin: '-1px 0px',
+    rootMargin: "-1px 0px",
     onChange: (aboutRefIsVisible) => {
       if (aboutRefIsVisible === true) {
         // IntersectionObserver.unobserve()
@@ -34,15 +34,15 @@ function App() {
   // });
 
   const [y, setY] = useState(0);
-  const [scrollDirection, setScrollDirection] = useState('down');
+  const [scrollDirection, setScrollDirection] = useState("down");
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const handleNavigation = useCallback(
     (e) => {
       if (y > window.scrollY) {
-        setScrollDirection('up');
+        setScrollDirection("up");
       } else if (y < window.scrollY) {
-        setScrollDirection('down');
+        setScrollDirection("down");
       }
       setY(window.scrollY);
     },
@@ -50,11 +50,11 @@ function App() {
   );
 
   useEffect(() => {
-    window.addEventListener('scroll', handleNavigation);
+    window.addEventListener("scroll", handleNavigation);
 
     return () => {
       // return a cleanup function to unregister our function since its gonna run multiple times
-      window.removeEventListener('scroll', handleNavigation);
+      window.removeEventListener("scroll", handleNavigation);
     };
   }, [handleNavigation]);
 
@@ -82,24 +82,24 @@ function App() {
     });
 
     //convert 12 hour format to 24 hour format
-    let sunRiseAMPM = response.sunrise.split(':')[2];
-    let sunSetAMPM = response.sunset.split(':')[2];
+    let sunRiseAMPM = response.sunrise.split(":")[2];
+    let sunSetAMPM = response.sunset.split(":")[2];
 
-    sunriseUTCHour = parseInt(response.sunrise.split(':')[0], 10);
-    sunriseUTCMinutes = parseInt(response.sunrise.split(':')[1], 10);
-    sunsetUTCHour = parseInt(response.sunset.split(':')[0], 10);
-    sunsetUTCMinutes = parseInt(response.sunset.split(':')[1], 10);
+    sunriseUTCHour = parseInt(response.sunrise.split(":")[0], 10);
+    sunriseUTCMinutes = parseInt(response.sunrise.split(":")[1], 10);
+    sunsetUTCHour = parseInt(response.sunset.split(":")[0], 10);
+    sunsetUTCMinutes = parseInt(response.sunset.split(":")[1], 10);
 
-    if (sunriseUTCHour === '12' || sunsetUTCHour === '12') {
-      sunriseUTCHour = '00';
-      sunsetUTCHour = '00';
+    if (sunriseUTCHour === "12" || sunsetUTCHour === "12") {
+      sunriseUTCHour = "00";
+      sunsetUTCHour = "00";
     }
 
-    if (sunRiseAMPM.includes('PM')) {
+    if (sunRiseAMPM.includes("PM")) {
       sunriseUTCHour += 12;
     }
 
-    if (sunSetAMPM.includes('PM')) {
+    if (sunSetAMPM.includes("PM")) {
       sunsetUTCHour += 12;
     }
 
@@ -125,7 +125,7 @@ function App() {
   let menuRef = useRef();
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside, true);
+    document.addEventListener("mousedown", handleClickOutside, true);
   }, []);
 
   //close cart popout when clicked outside
@@ -136,7 +136,7 @@ function App() {
   };
 
   return (
-    <div className={darkMode ? 'App-dark-mode' : 'App'}>
+    <div className={darkMode ? "App-dark-mode" : "App"}>
       <div className="portfolio-container">
         <NavBar darkMode={darkMode} setMenuIsOpen={setMenuIsOpen} />
         <MenuSlideOut
@@ -144,57 +144,19 @@ function App() {
           setMenuIsOpen={setMenuIsOpen}
           menuRef={menuRef}
         />
-        <HeroHeader />
+        <HeroHeader darkMode={darkMode} />
         <ProjectSection />
-
-        {/* <div className="projects-section">
-          {projects.map((items) => (
-            <ProjectCard
-              {...items}
-              scrollDirection={scrollDirection}
-              darkMode={darkMode}
-            />
-          ))}
-        </div> */}
-
         <div
           ref={techRef}
           className={`${
-            techRefIsVisible && scrollDirection === 'down'
-              ? 'tech-used-section-in-view'
-              : 'tech-used-section'
+            techRefIsVisible && scrollDirection === "down"
+              ? "tech-used-section-in-view"
+              : "tech-used-section"
           }`}
         >
           <TechUsed />
         </div>
-
-        <div
-          ref={aboutRef}
-          className={`${
-            aboutRefIsVisible && scrollDirection === 'down'
-              ? 'about-me-section-in-view'
-              : 'about-me-section'
-          }`}
-        >
-          <AboutMe
-            scrollDirection={scrollDirection}
-            scrollValue={y}
-            className={`${
-              aboutRefIsVisible ? 'about-title-in-view' : 'about-title'
-            }`}
-          />
-        </div>
-
-        {/* <div
-          ref={contactRef}
-          className={`${
-            contactRefIsVisible && scrollDirection === 'down'
-              ? 'contact-section-in-view'
-              : 'contact-section'
-          }`}
-        >
-          <Contact darkMode={darkMode} />
-        </div> */}
+        <AboutMe scrollDirection={scrollDirection} scrollValue={y} />
       </div>
 
       <div className="footer-section">
@@ -208,32 +170,32 @@ function App() {
 
 const projects = [
   {
-    cardDescription: 'Elevating collaboration with teachers & students.',
-    imgUrl: 'project-thumbnail-1.png',
-    projectName: 'Project 1',
-    date: 'Fall 2022',
+    cardDescription: "Elevating collaboration with teachers & students.",
+    imgUrl: "project-thumbnail-1.png",
+    projectName: "Project 1",
+    date: "Fall 2022",
   },
 
   {
     cardDescription:
-      'Driving blockchain and robotics together with gamification.',
-    imgUrl: 'project-thumbnail-2.png',
-    projectName: 'Project 2',
-    date: 'Fall 2022',
+      "Driving blockchain and robotics together with gamification.",
+    imgUrl: "project-thumbnail-2.png",
+    projectName: "Project 2",
+    date: "Fall 2022",
   },
 
   {
-    cardDescription: 'A doll & app for children with Autism Spectrum Disorder.',
-    imgUrl: 'project-thumbnail-3.png',
-    projectName: 'Project 3',
-    date: 'Fall 2022',
+    cardDescription: "A doll & app for children with Autism Spectrum Disorder.",
+    imgUrl: "project-thumbnail-3.png",
+    projectName: "Project 3",
+    date: "Fall 2022",
   },
 
   {
-    cardDescription: 'A toy range for growing good habits in young children.',
-    imgUrl: 'project-thumbnail-4.png',
-    projectName: 'Project 4',
-    date: 'Fall 2022',
+    cardDescription: "A toy range for growing good habits in young children.",
+    imgUrl: "project-thumbnail-4.png",
+    projectName: "Project 4",
+    date: "Fall 2022",
   },
 ];
 

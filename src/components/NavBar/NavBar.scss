@@ -18,13 +18,18 @@
     align-items: center;
     position: relative;
     column-gap: 2rem;
+  }
 
-    p {
-      font-family: Plus Jakarta Medium;
-      font-weight: 500;
-      letter-spacing: -0.54px;
-      cursor: pointer;
-    }
+  &__link {
+    font-family: Plus Jakarta Medium;
+    font-weight: 500;
+    letter-spacing: -0.54px;
+    cursor: pointer;
+  }
+
+  &__link--light {
+    @extend .nav__link;
+    color: white;
   }
 
   &__hamburger-container {

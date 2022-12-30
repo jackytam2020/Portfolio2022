@@ -19,10 +19,6 @@
   background-color: white;
   color: black;
   overflow-x: hidden;
-
-  /* background: linear-gradient(to right bottom,
-   rgba(255,255,255,.7),
-   rgba(255,255,255,.3)); */
 }
 
 .App-dark-mode {
@@ -33,15 +29,12 @@
   align-items: center;
   transition: 1s;
   color: white;
-  background-color: #111818;
-  max-width: 1050px;
-  /* background: linear-gradient(to right bottom,
-   rgba(255,255,255,.7),
-   rgba(255,255,255,.3)); */
+  background-color: black;
+  overflow-x: hidden;
 }
 
 .portfolio-container {
-  max-width: 1050px;
+  max-width: 1280px;
   display: flex;
   flex-direction: column;
   position: relative;

@@ -1,4 +1,25 @@
 @use '../../styles/partials/breakpoints' as *;
 
 .project-section {
+  &__project-list {
+    margin-top: 5rem;
+  }
+}
+
+@include small() {
+  .project-section {
+    padding: 0rem 1rem;
+  }
+}
+
+@include medium() {
+  .project-section {
+    padding: 0rem 2rem;
+  }
+}
+
+@include large() {
+  .project-section {
+    padding: 0rem;
+  }
 }
