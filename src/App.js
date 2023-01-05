@@ -20,7 +20,7 @@ function App() {
 
   //configuration for scrolling effects
   const skillsSection = {
-    threshold: 0,
+    threshold: 0.5,
     rootMargin: '0px 0px -100px 0px',
     trackVisibility: true,
     delay: 500,
