@@ -119,7 +119,7 @@
 
   &__resume-btn {
     margin-top: auto;
-    margin-bottom: 10rem;
+    margin-bottom: 15rem;
   }
 }
 
@@ -149,6 +149,21 @@
     margin-top: 10rem;
     &__copy {
       font-size: 4rem;
+    }
+  }
+}
+
+@include extraLarge() {
+  .hero {
+    &__copy {
+      font-size: 5rem;
+    }
+    &__sub-copy {
+      font-size: 2rem;
+      margin-top: 4rem;
+    }
+    &__resume-btn {
+      margin-top: 10rem;
     }
   }
 }

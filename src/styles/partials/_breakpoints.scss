@@ -1,6 +1,7 @@
 $mobile-max-width: 767px;
 $tablet-min-width: 768px;
 $desktop-min-width: 1280px;
+$desktop-min-height: 1100px;
 
 /* media query for mobile */
 @mixin small {
@@ -20,6 +21,13 @@ $desktop-min-width: 1280px;
 /* media query for high pixel density devices */
 @mixin large {
   @media only screen and (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+/* media query for high pixel density devices */
+@mixin extraLarge {
+  @media only screen and (min-height: $desktop-min-height) {
     @content;
   }
 }
