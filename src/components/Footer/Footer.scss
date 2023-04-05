@@ -12,6 +12,10 @@
   color: white;
   font-family: 'Nueu Hass Light';
 
+  a {
+    cursor: pointer;
+  }
+
   &__max-width {
     display: flex;
     flex-direction: column;

@@ -7,7 +7,6 @@ import { ThemeContext } from '../../context';
 import './ProjectCard.scss';
 
 const ProjectCard = ({
-  scrollDirection,
   src,
   alt,
   title,
@@ -88,12 +87,14 @@ const ProjectCard = ({
         <p className="card__title">{title}</p>
         <p className="card__description">{desc}</p>
         <div className="card__links">
-          <a href={HostLink} target="_blank">
-            <AiOutlineLink
-              className="card__link-logo"
-              color={darkMode ? 'white' : 'black'}
-            />
-          </a>
+          {HostLink && (
+            <a href={HostLink} target="_blank">
+              <AiOutlineLink
+                className="card__link-logo"
+                color={darkMode ? 'white' : 'black'}
+              />
+            </a>
+          )}
           <a href={GitHubLink} target="_blank">
             <AiOutlineGithub
               className="card__link-logo"

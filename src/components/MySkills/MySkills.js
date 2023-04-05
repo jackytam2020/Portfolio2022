@@ -3,6 +3,7 @@ import './MySkills.scss';
 import HtmlIcon from '../../assets/images/html-svgrepo-com.svg';
 import CssIcon from '../../assets/images/css-svgrepo-com.svg';
 import JsIcon from '../../assets/images/js-svgrepo-com.svg';
+import TSIcon from '../../assets/images/typescript-icon-svgrepo-com.svg';
 import NodeIcon from '../../assets/images/node-icon.svg';
 import ExpressIcon from '../../assets/images/express-icon.svg';
 import WhiteExpressIcon from '../../assets/images/express-icon-white.svg';
@@ -42,6 +43,7 @@ const MySkills = ({ isVisible, reference }) => {
         <img src={HtmlIcon} alt="Html" className="skills__skill-icon" />
         <img src={CssIcon} alt="Css" className="skills__skill-icon" />
         <img src={JsIcon} alt="JS" className="skills__skill-icon" />
+        <img src={TSIcon} alt="TS" className="skills__skill-icon" />
         <img src={ReactIcon} alt="React" className="skills__skill-icon" />
         <img src={NodeIcon} alt="React" className="skills__skill-icon" />
         <img

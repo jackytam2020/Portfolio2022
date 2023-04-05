@@ -14,6 +14,7 @@ function Footer() {
             onClick={() => {
               scroll.scrollToTop();
             }}
+            style={{ cursor: 'pointer' }}
           >
             Home
           </p>
@@ -40,9 +41,15 @@ function Footer() {
         <div className="footer__bottom">
           <p className="footer__role">web developer</p>
           <div className="footer__buttons">
-            <img src={GithubIcon} alt="github-icon" />
-            <img src={GmailIcon} alt="gmail-icon" />
-            <img src={LinkedInIcon} alt="linkedin-icon" />
+            <a href="https://github.com/jackytam2020" target="_blank">
+              <img src={GithubIcon} alt="github-icon" />
+            </a>
+            <a href="mailto:jackytam2020@gmail.com" target="_blank">
+              <img src={GmailIcon} alt="gmail-icon" />
+            </a>
+            <a href="https://www.linkedin.com/in/jackytam1996/" target="_blank">
+              <img src={LinkedInIcon} alt="linkedin-icon" />
+            </a>
           </div>
         </div>
         <div className="footer__line"></div>

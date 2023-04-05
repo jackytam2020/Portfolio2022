@@ -29,7 +29,8 @@ const HeroHeader = ({ darkMode }) => {
         </motion.p>
         <div className="hero__resume-btn">
           <motion.a
-            href=""
+            href="/pdfs/JACKY_TAM_RESUME.pdf"
+            target="_blank"
             animate={{ opacity: 1 }}
             transition={{ delay: 3.5, ease: 'easeInOut', duration: 1 }}
             initial={{ opacity: 0 }}
