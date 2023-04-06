@@ -73,6 +73,7 @@ function ProjectSection({ darkMode }) {
           reference={projectRef3}
           isVisible={myElementIsVisible3}
           GitHubLink={'https://github.com/jackytam2020/ea-hackathon'}
+          HostLink={'https://ea-hackathon.vercel.app/'}
         />
       </div>
     </section>
