@@ -32,6 +32,14 @@
   }
 }
 
+.menu--dark {
+  @extend .menu;
+  background-color: #111818;
+  p {
+    color: white;
+  }
+}
+
 .menu--closed {
   @extend .menu;
   right: -100%;

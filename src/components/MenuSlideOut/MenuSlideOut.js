@@ -6,14 +6,19 @@ import { Link, animateScroll as scroll } from 'react-scroll';
 import { HiOutlineX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 
-function MenuSlideOut({ menuIsOpen, setMenuIsOpen, menuRef }) {
+function MenuSlideOut({ menuIsOpen, setMenuIsOpen, menuRef, darkMode }) {
   const variants = {
     show: { transform: 'translateX(0em)', opacity: 1 },
     hide: { transform: 'translateX(5em)', opacity: 0 },
   };
 
   return (
-    <div className={menuIsOpen ? 'menu' : 'menu--closed'} ref={menuRef}>
+    <div
+      className={
+        menuIsOpen ? (darkMode ? 'menu--dark' : 'menu') : 'menu--closed'
+      }
+      ref={menuRef}
+    >
       <div className="menu__top">
         <ModeToggle setMenuIsOpen={setMenuIsOpen} />
         <HiOutlineX

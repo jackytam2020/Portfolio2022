@@ -57,6 +57,7 @@ function App() {
           menuIsOpen={menuIsOpen}
           setMenuIsOpen={setMenuIsOpen}
           menuRef={menuRef}
+          darkMode={darkMode}
         />
         <HeroHeader darkMode={darkMode} />
         <ProjectSection />
